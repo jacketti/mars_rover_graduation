@@ -1,4 +1,5 @@
 struct RoverState {
+    var position: Position
     var xCoordinate: Int = 0
     var yCoordinate: Int = 0
     var direction: Direction
@@ -14,12 +15,7 @@ extension RoverState {
     }
 
     mutating func moveForward() {
-        switch direction {
-        case .north: yCoordinate += 1
-        case .south: yCoordinate -= 1
-        case .east: xCoordinate += 1
-        case .west: xCoordinate -= 1
-        }
+        position = position.moved(in: direction)
     }
 }
 
@@ -56,11 +52,12 @@ class Rover {
         if segments.count == 3,
            let xCoordinate = Int(segments[0]),
            let yCoordinate = Int(segments[1]),
-           let dirChar = segments[2].first,
-           let dir = Direction(rawValue: dirChar) {
-            roverState = RoverState(xCoordinate: xCoordinate, yCoordinate: yCoordinate, direction: dir)
+           let directionChar = segments[2].first,
+           let direction = Direction(rawValue: directionChar) {
+            let position = Position(xCoordinate: xCoordinate, yCoordinate: yCoordinate)
+            roverState = RoverState(position: position, direction: direction)
         } else {
-            roverState = RoverState(xCoordinate: 0, yCoordinate: 0, direction: .north)
+            roverState = RoverState(position: Position(xCoordinate: 0, yCoordinate: 0), direction: .north)
         }
     }
 
@@ -86,20 +83,21 @@ class Rover {
     }
 
     func endPosition() -> String {
-        return "\(roverState.xCoordinate) \(roverState.yCoordinate) \(roverState.direction.rawValue)"
+        let position = roverState.position
+        return "\(position.xCoordinate) \(position.yCoordinate) \(roverState.direction.rawValue)"
     }
 }
 
 struct Position {
-    var x: Int
-    var y: Int
+    var xCoordinate: Int
+    var yCoordinate: Int
 
     func moved(in direction: Direction) -> Position {
         switch direction {
-        case .north: return Position(x: x, y: y + 1)
-        case .south: return Position(x: x, y: y - 1)
-        case .east: return Position(x: x + 1, y: y)
-        case .west: return Position(x: x - 1, y: y)
+        case .north: return Position(xCoordinate: xCoordinate, yCoordinate: yCoordinate + 1)
+        case .south: return Position(xCoordinate: xCoordinate, yCoordinate: yCoordinate - 1)
+        case .east: return Position(xCoordinate: xCoordinate + 1, yCoordinate: yCoordinate)
+        case .west: return Position(xCoordinate: xCoordinate - 1, yCoordinate: yCoordinate)
         }
     }
 }

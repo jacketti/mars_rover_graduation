@@ -83,8 +83,9 @@ fourth pomodoro:
     - [x] turnedRight should be part of roverstate 
     
 fifth pomodoro: 
-- [] coordinates should be a tuple
-    - [] parallel create position
+- [x] coordinates should be together
+    - [x] parallel create position
+    - [x] use new position
      
 
 
