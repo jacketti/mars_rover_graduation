@@ -60,6 +60,11 @@ second pomodoro
 third pomodoro    
 - [x] class RoverState should be a struct
 - [] get rid of magic 'numbers'
+        - [] Pattern of type 'Rover.Direction' cannot match 'Character'
+        - [] Cannot assign value of type 'Rover.Direction' to type 'Character'
+        - [] Value of type 'Character' has no member 'turnedLeft'
+        
+        
 
 - [] init:
     - [] if statement is unclear

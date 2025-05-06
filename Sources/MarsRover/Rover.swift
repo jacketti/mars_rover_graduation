@@ -2,10 +2,36 @@ struct RoverState {
     var xCoordinate: Int = 0
     var yCoordinate: Int = 0
     var direction: Character = "N"
+    var newDirection: Direction
+
+    enum Direction: Character {
+        case north = "N"
+        case east = "E"
+        case south = "S"
+        case west = "W"
+
+        func turnedLeft() -> Direction {
+            switch self {
+            case .north: return .west
+            case .west: return .south
+            case .south: return .east
+            case .east: return .north
+            }
+        }
+
+        func turnedRight() -> Direction {
+            switch self {
+            case .north: return .east
+            case .east: return .south
+            case .south: return .west
+            case .west: return .north
+            }
+        }
+    }
 }
 
 class Rover {
-    private var roverState = RoverState()
+    private var roverState = RoverState(newDirection: .north)
 
     init(_ position: String = "") {
         let segment = position.split(separator: " ")
@@ -14,6 +40,12 @@ class Rover {
             roverState.yCoordinate = Int(segment[1]) ?? 0
             roverState.direction = segment[2].first ?? "N"
         }
+    }
+
+    enum Command: Character {
+        case left = "L"
+        case right = "R"
+        case move = "M"
     }
 
     func followInstructions(_ commandString: String) {
@@ -47,12 +79,6 @@ class Rover {
                 }
             }
         }
-    }
-
-    enum Command: Character {
-        case left = "L"
-        case right = "R"
-        case move = "M"
     }
 
     func endPosition() -> String {
