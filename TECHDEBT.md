@@ -30,3 +30,21 @@ first pomodoro:
 - [X] func pos
     - [X] unclear name
     - [X] unclear reason for being
+
+second pomodoro
+- [] character N is unclear
+- [] init:
+  - [] p is unclear
+    - [] s in unclear
+    - [] if statement is unclear
+
+- [] func go
+    - [] cms is unclear
+    - [] c is unclear
+    - [] case L is unclear
+    - [] case R is unclear
+    - [] case M is unclear
+    
+- [] func g
+    - [] unclear name 
+    - [] unclear reason for being

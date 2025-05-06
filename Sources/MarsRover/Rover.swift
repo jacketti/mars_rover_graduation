@@ -16,7 +16,7 @@ class Rover {
         }
     }
 
-    func go(_ cms: String) {
+    func followInstructions(_ cms: String) {
         for c in cms {
             switch c {
             case "L":
@@ -50,7 +50,7 @@ class Rover {
     }
 
     func g(_ z: Character) {
-        go(String(z))
+        followInstructions(String(z))
     }
 
     func endPosition() -> String {
