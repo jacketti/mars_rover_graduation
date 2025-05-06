@@ -6,7 +6,7 @@ let package = Package(
     products: [
         .library(
             name: "MarsRover",
-            targets: ["MarsRover"]),
+            targets: ["MarsRover"])
     ],
     targets: [
         .target(
@@ -16,6 +16,6 @@ let package = Package(
         .testTarget(
             name: "MarsRoverTests",
             dependencies: ["MarsRover"],
-            path: "Tests/MarsRoverTests"),
+            path: "Tests/MarsRoverTests")
     ]
 )
