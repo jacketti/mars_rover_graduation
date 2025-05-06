@@ -59,19 +59,28 @@ second pomodoro
     
 third pomodoro    
 - [x] class RoverState should be a struct
-- [] get rid of magic 'numbers'
-        - [] Pattern of type 'Rover.Direction' cannot match 'Character'
-        - [] Cannot assign value of type 'Rover.Direction' to type 'Character'
-        - [] Value of type 'Character' has no member 'turnedLeft'
+- [X] get rid of magic 'numbers'
+        - [X] Pattern of type 'Rover.Direction' cannot match 'Character'
+        - [X] Cannot assign value of type 'Rover.Direction' to type 'Character'
+        - [X] Value of type 'Character' has no member 'turnedLeft'
         
         
 
-- [] init:
-    - [] if statement is unclear
+- [X] init:
+    - [X] if statement is unclear
     - [] position should not be a string but something better
         - [] coordinates should be a tuple
-        - [] direction should be an enum
+        - [X] direction should be an enum
 
-- [] func followInstructions 
+- [X] func followInstructions 
     - [x] use directions instead of letters
-    - [] use winddirections instead of letters 
+    - [X] use winddirections instead of letters 
+
+fourth pomodoro:
+- [] cleanup followInstructions
+    - [X] moveForward should be part of roverstate
+    - [] turnedLeft should be part of roverstate
+    - [] turnedRight should be part of roverstate
+     
+
+

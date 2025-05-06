@@ -4,6 +4,17 @@ struct RoverState {
     var direction: Direction
 }
 
+extension RoverState {
+    mutating func moveForward() {
+        switch direction {
+        case .north: yCoordinate += 1
+        case .south: yCoordinate -= 1
+        case .east: xCoordinate += 1
+        case .west: xCoordinate -= 1
+        }
+    }
+}
+
     enum Direction: Character {
         case north = "N"
         case east = "E"
@@ -61,12 +72,7 @@ class Rover {
             case .right:
                 roverState.direction = roverState.direction.turnedRight()
             case .move:
-                switch roverState.direction {
-                case .north: roverState.yCoordinate += 1
-                case .south: roverState.yCoordinate -= 1
-                case .east:  roverState.xCoordinate += 1
-                case .west:  roverState.xCoordinate -= 1
-                }
+                roverState.moveForward()
             }
         }
     }
