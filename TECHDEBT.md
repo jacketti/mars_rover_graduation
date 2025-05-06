@@ -56,3 +56,17 @@ second pomodoro
 - [x] func g
     - [] unclear name 
     - [x] unclear reason for being
+    
+third pomodoro    
+- [x] class RoverState should be a struct
+- [] get rid of magic 'numbers'
+
+- [] init:
+    - [] if statement is unclear
+    - [] position should not be a string but something better
+        - [] coordinates should be a tuple
+        - [] direction should be an enum
+
+- [] func followInstructions 
+    - [x] use directions instead of letters
+    - [] use winddirections instead of letters 

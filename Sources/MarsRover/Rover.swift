@@ -1,4 +1,4 @@
-class RoverState {
+struct RoverState {
     var xCoordinate: Int = 0
     var yCoordinate: Int = 0
     var direction: Character = "N"
@@ -49,11 +49,11 @@ class Rover {
         }
     }
 
-        enum Command: Character {
-            case left = "L"
-            case right = "R"
-            case move = "M"
-        }
+    enum Command: Character {
+        case left = "L"
+        case right = "R"
+        case move = "M"
+    }
 
     func endPosition() -> String {
         return "\(roverState.xCoordinate) \(roverState.yCoordinate) \(roverState.direction)"
