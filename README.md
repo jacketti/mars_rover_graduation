@@ -58,4 +58,4 @@ Or open the package in Xcode and run the tests from there.
 - `Sources/MarsRover/Rover.swift`: Contains the main implementation of the Rover class
 - `Tests/MarsRoverTests/RoverTests.swift`: Contains the test suite
 - `Package.swift`: Swift Package Manager configuration file
- 
+
