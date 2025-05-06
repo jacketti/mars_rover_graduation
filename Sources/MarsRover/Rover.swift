@@ -1,9 +1,7 @@
-struct RoverState {
+struct RoverPosition {
     var position: Position
     var direction: Direction
-}
 
-extension RoverState {
     mutating func turnLeft() {
         direction = direction.turnedLeft()
     }
@@ -43,7 +41,7 @@ enum Direction: Character {
 }
 
 class Rover {
-    private var roverState: RoverState
+    private var roverPosition: RoverPosition
 
     init(_ position: String = "") {
         let segments = position.split(separator: " ")
@@ -53,9 +51,9 @@ class Rover {
            let directionChar = segments[2].first,
            let direction = Direction(rawValue: directionChar) {
             let position = Position(xCoordinate: xCoordinate, yCoordinate: yCoordinate)
-            roverState = RoverState(position: position, direction: direction)
+            roverPosition = RoverPosition(position: position, direction: direction)
         } else {
-            roverState = RoverState(position: Position(xCoordinate: 0, yCoordinate: 0), direction: .north)
+            roverPosition = RoverPosition(position: Position(xCoordinate: 0, yCoordinate: 0), direction: .north)
         }
     }
 
@@ -71,18 +69,18 @@ class Rover {
 
             switch command {
             case .left:
-                roverState.turnLeft()
+                roverPosition.turnLeft()
             case .right:
-                roverState.turnRight()
+                roverPosition.turnRight()
             case .move:
-                roverState.moveForward()
+                roverPosition.moveForward()
             }
         }
     }
 
     func endPosition() -> String {
-        let position = roverState.position
-        return "\(position.xCoordinate) \(position.yCoordinate) \(roverState.direction.rawValue)"
+        let position = roverPosition.position
+        return "\(position.xCoordinate) \(position.yCoordinate) \(roverPosition.direction.rawValue)"
     }
 }
 
