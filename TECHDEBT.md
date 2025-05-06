@@ -2,7 +2,7 @@ pre pomodoro:
 - [] fix the pre-commit 
 - [] starting coverage is 82,9%  
     - [] cover g()
-- [] swiftlint has violations
+- [🚧] swiftlint has violations
     
 
 first pomodoro: 
@@ -27,6 +27,6 @@ first pomodoro:
     - [] unclear name 
     - [] unclear reason for being
     
-- [] func pos
-    - [] unclear name
-    - [] unclear reason for being
+- [X] func pos
+    - [X] unclear name
+    - [X] unclear reason for being

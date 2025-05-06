@@ -53,7 +53,7 @@ class Rover {
         go(String(z))
     }
 
-    func pos() -> String {
+    func endPosition() -> String {
         return "\(roverState.xCoordinate) \(roverState.yCoordinate) \(roverState.direction)"
     }
 }

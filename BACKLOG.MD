@@ -32,7 +32,7 @@
 and clean
 
 High-level refactoring plan: 
-    - [] make the code readable
+    - [🚧] make the code readable
     - [] reduce complexity
     - [] reorder responsibilities
     - [] refine abstractions

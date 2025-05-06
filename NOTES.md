@@ -1,4 +1,4 @@
 first pomodoro: 
-- [] read the code
-- [] write down smells
+- [X] read the code
+- [X] write down smells
 - [] write down where to refactor 
