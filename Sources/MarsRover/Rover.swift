@@ -89,3 +89,17 @@ class Rover {
         return "\(roverState.xCoordinate) \(roverState.yCoordinate) \(roverState.direction.rawValue)"
     }
 }
+
+struct Position {
+    var x: Int
+    var y: Int
+
+    func moved(in direction: Direction) -> Position {
+        switch direction {
+        case .north: return Position(x: x, y: y + 1)
+        case .south: return Position(x: x, y: y - 1)
+        case .east: return Position(x: x + 1, y: y)
+        case .west: return Position(x: x - 1, y: y)
+        }
+    }
+}
