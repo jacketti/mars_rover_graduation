@@ -7,18 +7,18 @@ class RoverState {
 class Rover {
     private var roverState = RoverState()
 
-    init(_ p: String = "") {
-        let s = p.split(separator: " ")
-        if s.count >= 3 {
-            roverState.xCoordinate = Int(s[0]) ?? 0
-            roverState.yCoordinate = Int(s[1]) ?? 0
-            roverState.direction = s[2].first ?? "N"
+    init(_ position: String = "") {
+        let segment = position.split(separator: " ")
+        if segment.count >= 3 {
+            roverState.xCoordinate = Int(segment[0]) ?? 0
+            roverState.yCoordinate = Int(segment[1]) ?? 0
+            roverState.direction = segment[2].first ?? "N"
         }
     }
 
-    func followInstructions(_ cms: String) {
-        for c in cms {
-            switch c {
+    func followInstructions(_ commands: String) {
+        for command in commands {
+            switch command {
             case "L":
                 switch roverState.direction {
                 case "E": roverState.direction = "N"

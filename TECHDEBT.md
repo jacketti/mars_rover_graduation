@@ -32,18 +32,18 @@ first pomodoro:
     - [X] unclear reason for being
 
 second pomodoro
-- [] character N is unclear
+- [x] character N is unclear
 - [] init:
-  - [] p is unclear
-    - [] s in unclear
+  - [x] p is unclear
+    - [x] s in unclear
     - [] if statement is unclear
 
 - [] func go
     - [x] name is unclear
-    - [] cms is unclear
-    - [] c is unclear
-    - [] case L is unclear
-    - [] case R is unclear
+    - [x] cms is unclear
+    - [x] c is unclear
+    - [x] case L is unclear
+    - [x] case R is unclear
     - [] case M is unclear
     
 - [x] func g
