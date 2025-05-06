@@ -49,10 +49,6 @@ class Rover {
         }
     }
 
-    func g(_ z: Character) {
-        followInstructions(String(z))
-    }
-
     func endPosition() -> String {
         return "\(roverState.xCoordinate) \(roverState.yCoordinate) \(roverState.direction)"
     }

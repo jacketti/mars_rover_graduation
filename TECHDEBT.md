@@ -39,12 +39,13 @@ second pomodoro
     - [] if statement is unclear
 
 - [] func go
+    - [x] name is unclear
     - [] cms is unclear
     - [] c is unclear
     - [] case L is unclear
     - [] case R is unclear
     - [] case M is unclear
     
-- [] func g
+- [x] func g
     - [] unclear name 
-    - [] unclear reason for being
+    - [x] unclear reason for being
