@@ -2,12 +2,13 @@ pre pomodoro:
 - [] fix the pre-commit 
 - [] starting coverage is 82,9%  
     - [] cover g()
+- [] swiftlint has violations
     
 
 first pomodoro: 
-- [] xx is unclear
-- [] yy in unclear
-- [] dd in unclear
+- [x] xx is unclear
+- [x] yy in unclear
+- [x] dd in unclear
 - [] character N is unclear
 - [X] rs = roverstate = abreviations are        unclear
 - [] init:

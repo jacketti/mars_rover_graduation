@@ -1,7 +1,7 @@
 class RoverState {
-    var xx: Int = 0
-    var yy: Int = 0
-    var dd: Character = "N"
+    var xCoordinate: Int = 0
+    var yCoordinate: Int = 0
+    var direction: Character = "N"
 }
 
 class Rover {
@@ -10,9 +10,9 @@ class Rover {
     init(_ p: String = "") {
         let s = p.split(separator: " ")
         if s.count >= 3 {
-            roverState.xx = Int(s[0]) ?? 0
-            roverState.yy = Int(s[1]) ?? 0
-            roverState.dd = s[2].first ?? "N"
+            roverState.xCoordinate = Int(s[0]) ?? 0
+            roverState.yCoordinate = Int(s[1]) ?? 0
+            roverState.direction = s[2].first ?? "N"
         }
     }
     
@@ -20,11 +20,11 @@ class Rover {
         for c in cms {
             switch c {
             case "L":
-                switch roverState.dd { case "E": roverState.dd = "N" case "N": roverState.dd = "W" case "W": roverState.dd = "S" case "S": roverState.dd = "E" default: break }
+                switch roverState.direction { case "E": roverState.direction = "N" case "N": roverState.direction = "W" case "W": roverState.direction = "S" case "S": roverState.direction = "E" default: break }
             case "R":
-                switch roverState.dd { case "E": roverState.dd = "S" case "S": roverState.dd = "W" case "W": roverState.dd = "N" case "N": roverState.dd = "E" default: break }
+                switch roverState.direction { case "E": roverState.direction = "S" case "S": roverState.direction = "W" case "W": roverState.direction = "N" case "N": roverState.direction = "E" default: break }
             case "M":
-                switch roverState.dd { case "E": roverState.xx += 1 case "S": roverState.yy -= 1 case "W": roverState.xx -= 1 case "N": roverState.yy += 1 default: break }
+                switch roverState.direction { case "E": roverState.xCoordinate += 1 case "S": roverState.yCoordinate -= 1 case "W": roverState.xCoordinate -= 1 case "N": roverState.yCoordinate += 1 default: break }
             default:
                 break
             }
@@ -36,6 +36,6 @@ class Rover {
     }
     
     func pos() -> String {
-        return "\(roverState.xx) \(roverState.yy) \(roverState.dd)"
+        return "\(roverState.xCoordinate) \(roverState.yCoordinate) \(roverState.direction)"
     }
 }
