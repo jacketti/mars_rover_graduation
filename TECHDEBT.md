@@ -79,8 +79,8 @@ third pomodoro
 fourth pomodoro:
 - [] cleanup followInstructions
     - [X] moveForward should be part of roverstate
-    - [] turnedLeft should be part of roverstate
-    - [] turnedRight should be part of roverstate
+    - [x] turnedLeft should be part of roverstate
+    - [x] turnedRight should be part of roverstate 
      
 
 

@@ -5,6 +5,14 @@ struct RoverState {
 }
 
 extension RoverState {
+    mutating func turnLeft() {
+        direction = direction.turnedLeft()
+    }
+
+    mutating func turnRight() {
+        direction = direction.turnedRight()
+    }
+
     mutating func moveForward() {
         switch direction {
         case .north: yCoordinate += 1
@@ -15,30 +23,30 @@ extension RoverState {
     }
 }
 
-    enum Direction: Character {
-        case north = "N"
-        case east = "E"
-        case south = "S"
-        case west = "W"
+enum Direction: Character {
+    case north = "N"
+    case east = "E"
+    case south = "S"
+    case west = "W"
 
-        func turnedLeft() -> Direction {
-            switch self {
-            case .north: return .west
-            case .west: return .south
-            case .south: return .east
-            case .east: return .north
-            }
-        }
-
-        func turnedRight() -> Direction {
-            switch self {
-            case .north: return .east
-            case .east: return .south
-            case .south: return .west
-            case .west: return .north
-            }
+    func turnedLeft() -> Direction {
+        switch self {
+        case .north: return .west
+        case .west: return .south
+        case .south: return .east
+        case .east: return .north
         }
     }
+
+    func turnedRight() -> Direction {
+        switch self {
+        case .north: return .east
+        case .east: return .south
+        case .south: return .west
+        case .west: return .north
+        }
+    }
+}
 
 class Rover {
     private var roverState: RoverState
@@ -68,9 +76,9 @@ class Rover {
 
             switch command {
             case .left:
-                roverState.direction = roverState.direction.turnedLeft()
+                roverState.turnLeft()
             case .right:
-                roverState.direction = roverState.direction.turnedRight()
+                roverState.turnRight()
             case .move:
                 roverState.moveForward()
             }
