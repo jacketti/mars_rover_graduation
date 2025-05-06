@@ -2,7 +2,7 @@ pre pomodoro:
 - [] fix the pre-commit 
 - [] starting coverage is 82,9%  
     - [] cover g()
-- [🚧] swiftlint has violations
+- [X] swiftlint has violations
     
 
 first pomodoro: 

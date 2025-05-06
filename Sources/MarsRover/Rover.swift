@@ -1,8 +1,8 @@
 struct RoverState {
     var xCoordinate: Int = 0
     var yCoordinate: Int = 0
-    var direction: Character = "N"
-    var newDirection: Direction
+    var direction: Direction
+}
 
     enum Direction: Character {
         case north = "N"
@@ -28,17 +28,20 @@ struct RoverState {
             }
         }
     }
-}
 
 class Rover {
-    private var roverState = RoverState(newDirection: .north)
+    private var roverState: RoverState
 
     init(_ position: String = "") {
-        let segment = position.split(separator: " ")
-        if segment.count >= 3 {
-            roverState.xCoordinate = Int(segment[0]) ?? 0
-            roverState.yCoordinate = Int(segment[1]) ?? 0
-            roverState.direction = segment[2].first ?? "N"
+        let segments = position.split(separator: " ")
+        if segments.count == 3,
+           let xCoordinate = Int(segments[0]),
+           let yCoordinate = Int(segments[1]),
+           let dirChar = segments[2].first,
+           let dir = Direction(rawValue: dirChar) {
+            roverState = RoverState(xCoordinate: xCoordinate, yCoordinate: yCoordinate, direction: dir)
+        } else {
+            roverState = RoverState(xCoordinate: 0, yCoordinate: 0, direction: .north)
         }
     }
 
@@ -54,34 +57,21 @@ class Rover {
 
             switch command {
             case .left:
-                switch roverState.direction {
-                case "E": roverState.direction = "N"
-                case "N": roverState.direction = "W"
-                case "W": roverState.direction = "S"
-                case "S": roverState.direction = "E"
-                default: break
-                }
+                roverState.direction = roverState.direction.turnedLeft()
             case .right:
-                switch roverState.direction {
-                case "E": roverState.direction = "S"
-                case "S": roverState.direction = "W"
-                case "W": roverState.direction = "N"
-                case "N": roverState.direction = "E"
-                default: break
-                }
+                roverState.direction = roverState.direction.turnedRight()
             case .move:
                 switch roverState.direction {
-                case "E": roverState.xCoordinate += 1
-                case "S": roverState.yCoordinate -= 1
-                case "W": roverState.xCoordinate -= 1
-                case "N": roverState.yCoordinate += 1
-                default: break
+                case .north: roverState.yCoordinate += 1
+                case .south: roverState.yCoordinate -= 1
+                case .east:  roverState.xCoordinate += 1
+                case .west:  roverState.xCoordinate -= 1
                 }
             }
         }
     }
 
     func endPosition() -> String {
-        return "\(roverState.xCoordinate) \(roverState.yCoordinate) \(roverState.direction)"
+        return "\(roverState.xCoordinate) \(roverState.yCoordinate) \(roverState.direction.rawValue)"
     }
 }
