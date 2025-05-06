@@ -37,14 +37,21 @@ second pomodoro
   - [x] p is unclear
     - [x] s in unclear
     - [] if statement is unclear
+    - [] position should not be a string but something better
+        - [] coordinates should be a tuple
+        - [] direction should be an enum
 
-- [] func go
+- [x] func go
     - [x] name is unclear
     - [x] cms is unclear
     - [x] c is unclear
     - [x] case L is unclear
     - [x] case R is unclear
-    - [] case M is unclear
+    - [x] case M is unclear
+    
+- [] func followInstructions 
+    - [x] use directions instead of letters
+    - [] use winddirections instead of letters 
     
 - [x] func g
     - [] unclear name 

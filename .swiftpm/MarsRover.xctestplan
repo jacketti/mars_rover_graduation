@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "2ED59794-919B-430E-B309-9848B6FBFB3F",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "MarsRoverTests",
+        "name" : "MarsRoverTests"
+      }
+    }
+  ],
+  "version" : 1
+}

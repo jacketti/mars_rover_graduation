@@ -32,8 +32,8 @@
 and clean
 
 High-level refactoring plan: 
-    - [🚧] make the code readable
-    - [] reduce complexity
+    - [X] make the code readable
+    - [🚧] reduce complexity
     - [] reorder responsibilities
     - [] refine abstractions
     - [] refactor to design patterns

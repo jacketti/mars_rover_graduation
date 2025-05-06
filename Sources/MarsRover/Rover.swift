@@ -16,10 +16,12 @@ class Rover {
         }
     }
 
-    func followInstructions(_ commands: String) {
-        for command in commands {
+    func followInstructions(_ commandString: String) {
+        for char in commandString {
+            guard let command = Command(rawValue: char) else { continue }
+
             switch command {
-            case "L":
+            case .left:
                 switch roverState.direction {
                 case "E": roverState.direction = "N"
                 case "N": roverState.direction = "W"
@@ -27,7 +29,7 @@ class Rover {
                 case "S": roverState.direction = "E"
                 default: break
                 }
-            case "R":
+            case .right:
                 switch roverState.direction {
                 case "E": roverState.direction = "S"
                 case "S": roverState.direction = "W"
@@ -35,7 +37,7 @@ class Rover {
                 case "N": roverState.direction = "E"
                 default: break
                 }
-            case "M":
+            case .move:
                 switch roverState.direction {
                 case "E": roverState.xCoordinate += 1
                 case "S": roverState.yCoordinate -= 1
@@ -43,11 +45,15 @@ class Rover {
                 case "N": roverState.yCoordinate += 1
                 default: break
                 }
-            default:
-                break
             }
         }
     }
+
+        enum Command: Character {
+            case left = "L"
+            case right = "R"
+            case move = "M"
+        }
 
     func endPosition() -> String {
         return "\(roverState.xCoordinate) \(roverState.yCoordinate) \(roverState.direction)"
