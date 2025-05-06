@@ -1,45 +1,3 @@
-struct RoverPosition {
-    var position: Position
-    var direction: Direction
-
-    mutating func turnLeft() {
-        direction = direction.turnedLeft()
-    }
-
-    mutating func turnRight() {
-        direction = direction.turnedRight()
-    }
-
-    mutating func moveForward() {
-        position = position.moved(in: direction)
-    }
-}
-
-enum Direction: Character {
-    case north = "N"
-    case east = "E"
-    case south = "S"
-    case west = "W"
-
-    func turnedLeft() -> Direction {
-        switch self {
-        case .north: return .west
-        case .west: return .south
-        case .south: return .east
-        case .east: return .north
-        }
-    }
-
-    func turnedRight() -> Direction {
-        switch self {
-        case .north: return .east
-        case .east: return .south
-        case .south: return .west
-        case .west: return .north
-        }
-    }
-}
-
 class Rover {
     private var roverPosition: RoverPosition
 
@@ -81,6 +39,48 @@ class Rover {
     func endPosition() -> String {
         let position = roverPosition.position
         return "\(position.xCoordinate) \(position.yCoordinate) \(roverPosition.direction.rawValue)"
+    }
+}
+
+struct RoverPosition {
+    var position: Position
+    var direction: Direction
+
+    mutating func turnLeft() {
+        direction = direction.turnedLeft()
+    }
+
+    mutating func turnRight() {
+        direction = direction.turnedRight()
+    }
+
+    mutating func moveForward() {
+        position = position.moved(in: direction)
+    }
+}
+
+enum Direction: Character {
+    case north = "N"
+    case east = "E"
+    case south = "S"
+    case west = "W"
+
+    func turnedLeft() -> Direction {
+        switch self {
+        case .north: return .west
+        case .west: return .south
+        case .south: return .east
+        case .east: return .north
+        }
+    }
+
+    func turnedRight() -> Direction {
+        switch self {
+        case .north: return .east
+        case .east: return .south
+        case .south: return .west
+        case .west: return .north
+        }
     }
 }
 

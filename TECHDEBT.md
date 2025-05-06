@@ -87,7 +87,7 @@ fifth pomodoro:
     - [x] parallel create position
     - [x] use new position
     - [x] cleanup old x and y
-- [] restructure file
+- [X] restructure file
     - [X] rename roverstate to roverposition
 
 
