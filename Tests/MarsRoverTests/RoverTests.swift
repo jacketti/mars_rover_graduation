@@ -20,11 +20,12 @@ final class RoverTests: XCTestCase {
             ("1 2 N", "LMLMLMLMM", "1 3 N"),
             ("3 3 E", "MMRMMRMRRM", "5 1 E")
         ]
-        
+
         for (startingPosition, instructions, expectedOutput) in testCases {
             let rover = Rover(startingPosition)
             rover.go(instructions)
-            XCTAssertEqual(rover.pos(), expectedOutput, "Failed for starting position: \(startingPosition), instructions: \(instructions)")
+            XCTAssertEqual(rover.pos(), expectedOutput,
+                           "Failed for starting position: \(startingPosition), instructions: \(instructions)")
         }
     }
 }
