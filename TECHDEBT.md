@@ -86,6 +86,8 @@ fifth pomodoro:
 - [x] coordinates should be together
     - [x] parallel create position
     - [x] use new position
-     
+    - [x] cleanup old x and y
+- [] restructure file
+
 
 

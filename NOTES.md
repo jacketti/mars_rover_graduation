@@ -4,4 +4,4 @@ first pomodoro:
 - [] write down where to refactor 
 - [x] ask AI what these letters mean 
 - [x] ask ai advice on commands 
-- [] ask AI advice on fixing the initializer
+- [X] ask AI advice on fixing the initializer

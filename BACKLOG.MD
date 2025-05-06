@@ -5,10 +5,10 @@
         link to your graduation public repository.
 4. Time Box: 3 hours (6 🍅) to code and refactor
 ✅ 5. Solo mode: no pair, no mob programming
-6. Helper: transparent use of Gen-AI code assistant
+✅ 6. Helper: transparent use of Gen-AI code assistant
 ✅ 7. Backlog: a BACKLOG.md file with the high-level refactoring plan
-8. Notes: a NOTES.md file with your pomodoro flow
-9. Tech Debt: a TECH_DEBT.md file with the catalog (checklist) of all the smells to fix 
+✅ 8. Notes: a NOTES.md file with your pomodoro flow
+✅ 9. Tech Debt: a TECH_DEBT.md file with the catalog (checklist) of all the smells to fix 
 10. Coverage: 100% to be monitored in watch mode – Note: test must be green all the time
 11. Refactoring pillars [white & yellow belts] following the Refactoring Priority Premise:
     o Code is readable, discovering the domain vocabulary
@@ -33,8 +33,8 @@ and clean
 
 High-level refactoring plan: 
     - [X] make the code readable
-    - [🚧] reduce complexity
-    - [] reorder responsibilities
+    - [X] reduce complexity
+    - [X] reorder responsibilities
     - [] refine abstractions
     - [] refactor to design patterns
     - [] refactor to SOLID++

@@ -1,7 +1,5 @@
 struct RoverState {
     var position: Position
-    var xCoordinate: Int = 0
-    var yCoordinate: Int = 0
     var direction: Direction
 }
 
