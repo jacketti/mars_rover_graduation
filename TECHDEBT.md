@@ -91,4 +91,5 @@ fifth pomodoro:
     - [X] rename roverstate to roverposition
 
 
-
+after graduation:
+add test to cover initializer

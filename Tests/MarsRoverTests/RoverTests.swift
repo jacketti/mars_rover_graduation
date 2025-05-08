@@ -18,7 +18,8 @@ final class RoverTests: XCTestCase {
             ("1 2 S", "M", "1 1 S"),
             ("1 2 W", "M", "0 2 W"),
             ("1 2 N", "LMLMLMLMM", "1 3 N"),
-            ("3 3 E", "MMRMMRMRRM", "5 1 E")
+            ("3 3 E", "MMRMMRMRRM", "5 1 E"),
+            ("", "", "0 0 N") // new test to cover initializer
         ]
 
         for (startingPosition, instructions, expectedOutput) in testCases {
